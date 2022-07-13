@@ -48,3 +48,16 @@ function soma() {
 }
 
 console.log(soma(2, 6, 4))
+
+
+console.log('---------------------')
+//sobrecarga _ funçoes com o mesmo nome, a ultima funçao que valera
+function mensage(mensage) {
+    console.log(mensage)
+}
+
+function mensage() {
+    console.log('defaut mensage')
+}
+
+mensage('parametro 1')
