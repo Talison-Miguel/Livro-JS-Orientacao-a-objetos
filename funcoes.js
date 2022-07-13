@@ -51,7 +51,7 @@ console.log(soma(2, 6, 4))
 
 
 console.log('---------------------')
-//sobrecarga _ funçoes com o mesmo nome, a ultima funçao que valera
+//sobrecarga _ funçoes com o mesmo nome, a ultima funçao que valerá
 function mensage(mensage) {
     console.log(mensage)
 }
@@ -61,3 +61,16 @@ function mensage() {
 }
 
 mensage('parametro 1')
+
+
+console.log('---------------------')
+//metodos de objetos _ quando uma propiedade de um obj é uma funçao
+
+let pessoa = {
+    nome: 'talison',
+    sairNome: function() {
+        console.log(pessoa.nome)
+    }
+}
+
+pessoa.sairNome();
