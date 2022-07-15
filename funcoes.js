@@ -64,8 +64,7 @@ mensage('parametro 1')
 
 
 console.log('---------------------')
-//metodos de objetos _ quando uma propiedade de um obj é uma funçao
-
+//metodos de objetos _ quando uma propiedade de um obj é uma funçao ela se chama metodo
 let pessoa = {
     nome: 'talison',
     sairNome: function() {
@@ -74,3 +73,32 @@ let pessoa = {
 }
 
 pessoa.sairNome();
+
+
+console.log('---------------------')
+// this _ todo escopo em javaScript tem um objeto this que representa o obj que chama a funçao
+let person = {
+    name: 'talison usando this',
+    sairName: function() {
+        console.log(this.name)
+    }
+}
+person.sairName();
+
+function sayNameForAll() {
+    console.log(this.nome)
+}
+
+let pessoa1 = {
+    nome: 'miguel',
+    sairName: sayNameForAll
+}
+
+let pessoa2 = {
+    nome: 'amancio',
+    sairName: sayNameForAll
+}
+
+pessoa1.sairName()
+pessoa2.sairName()
+//nesse caso a funçao sayName ja pega o nome passado, pq o this é criado a cada obj
