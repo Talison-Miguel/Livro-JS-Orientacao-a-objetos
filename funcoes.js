@@ -102,3 +102,47 @@ let pessoa2 = {
 pessoa1.sairName()
 pessoa2.sairName()
 //nesse caso a funçao sayName ja pega o nome passado, pq o this é criado a cada obj
+
+
+
+console.log('---------------------')
+//metodo call() _ execulta a funçao com um determinado valor de this com parametros especificos
+function sayNameForAll2(label) {
+    console.log(label + ":" + this.name)
+}
+
+let perso1 = {
+    name: "Nicolas"
+}
+
+let perso2 = {
+    name: "greg"
+}
+
+let name = "michael"
+
+sayNameForAll2.call(this, "global")
+sayNameForAll2.call(perso1, "perso1")
+sayNameForAll2.call(perso2, "perso2")
+
+
+
+console.log('---------------------')
+//Metodo apply() __ chama uma função com um dado valor this e arguments providos como uma array (ou um objeto parecido com um array).
+sayNameForAll2.apply(this,["global"])
+sayNameForAll2.apply(perso1,["perso1"])
+sayNameForAll2.apply(perso2,["perso2"])
+
+
+
+console.log('---------------------')
+//Metodo bind() __ cria uma nova função que, quando chamada, tem sua palavra-chave this definida com o valor fornecido, com uma sequência determinada de argumentos precedendo quaisquer outros que sejam fornecidos quando a nova função é chamada.
+//Explicaçao simples _ Cria uma nova funçao para o obj, que tem que passar o label ainda e o obj ja foi passado
+let sayNameForAllPerson1 = sayNameForAll2.bind(perso1)
+sayNameForAllPerson1("person1")
+
+let sayNameForAllPerson2 = sayNameForAll2.bind(perso2, "person2")
+sayNameForAllPerson2()
+
+perso2.sayName = sayNameForAllPerson1;
+perso2.sayName("perso2")
