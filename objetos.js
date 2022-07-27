@@ -37,3 +37,24 @@ console.log("name" in perso)
 delete perso.name
 console.log(perso)
 console.log("name" in perso)
+
+
+console.log("______________________")
+//PROPIEDADES ENUMERADAS
+
+let talison = {
+    name: "talison",
+    age: 17
+}
+
+let propiedade = Object.keys(talison)
+let i, len;
+
+for (i = 0, len = propiedade.length; i < len; i++) {
+    console.log("Name :" + propiedade[i])
+    console.log("Value :" + talison[propiedade[i]])
+} 
+
+//verificar se existe e se a propiedade é enumerada
+console.log("name" in talison)
+console.log(talison.propertyIsEnumerable('name'))
