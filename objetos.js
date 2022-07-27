@@ -23,3 +23,17 @@ console.log("sairnome" in person2)
 //metodo hasOwnProperty() _ verifica se existe tal propiedade e retorna true se for propieade propia
 console.log("toString" in person1)
 console.log(person1.hasOwnProperty("toString"))
+
+
+
+console.log("______________________")
+//REMOVER PROPIEDADE
+let perso = {
+    name: 'nicolas'
+}
+
+console.log(perso)
+console.log("name" in perso)
+delete perso.name
+console.log(perso)
+console.log("name" in perso)
