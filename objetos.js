@@ -58,3 +58,24 @@ for (i = 0, len = propiedade.length; i < len; i++) {
 //verificar se existe e se a propiedade é enumerada
 console.log("name" in talison)
 console.log(talison.propertyIsEnumerable('name'))
+
+
+
+console.log("______________________")
+//Tipos de propiedade _ de DADOS e de ACESSO
+
+let pessoa = {
+    nome: "talison",
+    get name() {
+        console.log("Reading name")
+        return this.nome
+    },
+    set name(value) {
+        console.log("Setting name to %s", value)
+        this.nome = value
+    }
+};
+console.log(pessoa.name)
+
+pessoa.name = "Greg"
+console.log(pessoa.name)
