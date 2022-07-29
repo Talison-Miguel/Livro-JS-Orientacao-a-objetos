@@ -79,3 +79,38 @@ console.log(pessoa.name)
 
 pessoa.name = "Greg"
 console.log(pessoa.name)
+
+
+console.log("______________________")
+//__ Atributo de propiedades
+//configurar para ela nao ser apagada ou modificada
+// deixando a propiedade difinitiva _ usando Object.defineProperty(obj, nomeDaPropiedade, {configurable: false/true})
+// Object.defineProperty(person3, "name", {
+//    configurable: false
+//})
+
+let person3 = {
+    name: "troyyer"
+}
+
+Object.defineProperty(person3, "name", {
+    enumerable: false
+})
+console.log("name" in person3)
+console.log(person3.propertyIsEnumerable("name"))
+
+let properties = Object.keys(person3)
+console.log(properties.length)
+
+Object.defineProperty(person3, "name", {
+    configurable: false
+})
+
+delete person3.name
+
+console.log("name" in person3)
+console.log(person3.name)
+
+// Object.defineProperty(person3, "name", {
+//     configurable: true
+// })
