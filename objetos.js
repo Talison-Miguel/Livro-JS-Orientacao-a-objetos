@@ -114,3 +114,22 @@ console.log(person3.name)
 // Object.defineProperty(person3, "name", {
 //     configurable: true
 // })
+
+
+
+console.log("______________________")
+//atributo propiedade de dados
+//Object.defineProperty(nomeObj, "name", {}) _ define uma propiedade, se especificar todos os dados ele pode ser configurado e enumerado
+
+let pesooa = {};
+
+Object.defineProperty(pesooa, "name", {
+    value: "talison/miguel",
+    enumerable: true,
+    configurable: true,
+    writable: true
+})
+
+console.log(pesooa)
+console.log(pesooa.propertyIsEnumerable("name"))
+//se nao expessificar, configurable, writable como true a propiedade nao pode ser modificada
