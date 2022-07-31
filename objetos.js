@@ -133,3 +133,29 @@ Object.defineProperty(pesooa, "name", {
 console.log(pesooa)
 console.log(pesooa.propertyIsEnumerable("name"))
 //se nao expessificar, configurable, writable como true a propiedade nao pode ser modificada
+
+
+
+console.log("______________________")
+//atributo propiedade de acesso
+//Object.defineProperty(nomeObj, "name", {}) _ define uma propiedade, se especificar todos os dados ele pode ser configurado e enumerado
+
+let psoa1 = {
+    _name: "tali"
+}
+
+Object.defineProperty(psoa1, "name", {
+    get: function() {
+        console.log('reading name')
+        return this._name
+    },
+    set: function(value) {
+        console.log("setting name to %s", value)
+    },
+    enumerable: true,
+    configurable: true
+
+})
+
+console.log("name" in psoa1)
+console.log(psoa1.propertyIsEnumerable("name"))
