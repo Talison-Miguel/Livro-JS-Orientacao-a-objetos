@@ -159,3 +159,36 @@ Object.defineProperty(psoa1, "name", {
 
 console.log("name" in psoa1)
 console.log(psoa1.propertyIsEnumerable("name"))
+
+
+console.log("______________________")
+//Definindo varias propiedades
+
+let eu = {}
+
+Object.defineProperties(eu, {
+    _name: {
+        value: "Talison",
+        enumerable: true,
+        configurable: true,
+        writable: true
+    },
+
+    name: {
+        get: function() {
+            console.log("reading name")
+            return this._name
+        },
+        set: function(value) {
+            console.log("setting name %s", value)
+            this._name
+        },
+        enumerable: true,
+        configurable: true 
+    }
+});
+
+console.log(eu._name)
+
+console.log("______________________")
+//
