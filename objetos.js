@@ -190,5 +190,17 @@ Object.defineProperties(eu, {
 
 console.log(eu._name)
 
+
+
 console.log("______________________")
-//
+//Obetendo atributos de propiedades
+
+let irmao = {
+    name: "italo"
+}
+
+let descriptor = Object.getOwnPropertyDescriptor(irmao, "name")
+console.log(descriptor.enumerable)
+console.log(descriptor.configurable)
+console.log(descriptor.writable)
+console.log(descriptor.value)
