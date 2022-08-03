@@ -204,3 +204,23 @@ console.log(descriptor.enumerable)
 console.log(descriptor.configurable)
 console.log(descriptor.writable)
 console.log(descriptor.value)
+
+
+
+console.log("______________________")
+//Evitando modificações em objetos
+//Evitar extensoes _ Object.preventExtensions(obj)
+
+let mae = {
+    name: "analidia"
+}
+
+console.log(Object.isExtensible(mae))
+
+Object.preventExtensions(mae)
+console.log(Object.isExtensible(mae))
+
+mae.sayName = function() {
+    console.log(this.name)
+}
+console.log("sayName" in mae)
