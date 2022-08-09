@@ -250,3 +250,27 @@ console.log(pai.name)
 delete pai.name
 console.log("name" in pai)
 console.log(pai.name)
+let descripto = Object.getOwnPropertyDescriptor(pai, "name")
+console.log(descripto.configurable)
+
+
+console.log("______________________")
+//Congelando objetos
+
+let pssoa = {
+    name: "Miguel"
+}
+
+Object.freeze(pssoa)
+console.log(Object.isExtensible(pssoa))
+console.log(Object.isSealed(pssoa))
+console.log(Object.isFrozen(pssoa))
+
+pssoa.saiName = function() {
+    console.log(this.name)
+}
+
+console.log("saiName" in pssoa)
+
+pssoa.name = "Amancio"
+console.log(pssoa.name)
