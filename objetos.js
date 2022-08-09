@@ -1,3 +1,5 @@
+// 'use strict'
+
 //definir propiedade de um objeto
 let person1 = {
     name: "Nicholas"
@@ -224,3 +226,27 @@ mae.sayName = function() {
     console.log(this.name)
 }
 console.log("sayName" in mae)
+
+
+console.log("______________________")
+//Selando objetos
+//Deixar ele selado, atribuindo extensible, confugyrable como false
+
+let pai = {
+    name: "jorge"
+}
+
+console.log(Object.isExtensible(pai))
+console.log(Object.isSealed(pai))
+
+Object.seal(pai)
+console.log(Object.isExtensible(pai))
+console.log(Object.isSealed(pai))
+
+
+pai.name = 'JoegePaula'
+console.log(pai.name)
+
+delete pai.name
+console.log("name" in pai)
+console.log(pai.name)
