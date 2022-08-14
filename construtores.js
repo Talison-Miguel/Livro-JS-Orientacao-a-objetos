@@ -19,3 +19,29 @@ let perso2 = new Person("Talison")
 let perso01 = new Person("Miguel")
 console.log(perso2.name)
 perso01.sayName()
+
+
+
+console.log("__________________")
+//Protótipo
+//Protótipos são o mecanismo pelo qual objetos JavaScript herdam recursos uns dos outros.
+//Tipo uma receita para o objeto
+
+let book = {
+    title: "Livro js"
+}
+
+console.log('title' in book)
+console.log(book.hasOwnProperty("title"))
+console.log('hasOwnProperty' in book)
+console.log(book.hasOwnProperty("hasOwnProperty"))
+console.log(Object.prototype.hasOwnProperty('hasOwnProperty'))
+
+
+//Verificar uma propiedade de prototipo
+function hasPrototypeProperty(object, name) {
+    return name in object && !object.hasOwnProperty(name)
+}
+
+console.log(hasPrototypeProperty(book, 'title'))
+console.log(hasPrototypeProperty(book, 'hasOwnProperty'))
