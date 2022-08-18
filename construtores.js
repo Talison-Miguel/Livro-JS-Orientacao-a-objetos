@@ -45,3 +45,29 @@ function hasPrototypeProperty(object, name) {
 
 console.log(hasPrototypeProperty(book, 'title'))
 console.log(hasPrototypeProperty(book, 'hasOwnProperty'))
+
+
+
+console.log("__________________")
+//A propiedade prototype
+
+//verifica se o prototype é generico e vazio
+let obj = {};
+let prototyp = Object.getPrototypeOf(obj)
+console.log(prototyp === Object.prototype)
+
+
+//verifica se o prototypo é usado
+console.log(Object.prototype.isPrototypeOf(obj))
+
+
+
+console.log(obj.toString())
+obj.toString = function() {
+    return '[objetc custom]'
+}
+console.log(obj.toString())
+
+//apaga  a propiedade propia
+delete obj.toString;
+console.log(obj.toString())
