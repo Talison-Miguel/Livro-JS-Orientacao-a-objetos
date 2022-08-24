@@ -71,3 +71,25 @@ console.log(obj.toString())
 //apaga  a propiedade propia
 delete obj.toString;
 console.log(obj.toString())
+
+
+console.log("__________________")
+//Prototypos com construtores
+
+function pessoa(name) {
+    console.log(this.name)
+}
+
+Person.prototype.sayName = function() {
+    console.log(this.name)
+}
+
+let pesso1 = new Person("Nicholas")
+let pesso2 = new Person("Greg")
+
+console.log(pesso1.name)
+console.log(pesso2.name)
+
+pesso1.sayName()
+pesso2.sayName()
+
