@@ -93,3 +93,6 @@ console.log(pesso2.name)
 pesso1.sayName()
 pesso2.sayName()
 
+
+
+console.log("__________________")
