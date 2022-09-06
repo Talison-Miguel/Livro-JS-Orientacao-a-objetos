@@ -96,3 +96,24 @@ pesso2.sayName()
 
 
 console.log("__________________")
+//Prototypos com construtores 2
+
+function pssoa(name) {
+    this.name
+}
+
+Person.prototype.sayName = function() {
+    console.log(this.name)
+}
+
+Person.prototype.favorites = [];
+
+let peso1 = new Person("Nicola")
+let peso2 = new Person("Greg")
+
+peso1.favorites.push("pizza")
+peso2.favorites.push("quinoa")
+
+console.log(peso1.favorites)
+console.log(peso2.favorites)
+
