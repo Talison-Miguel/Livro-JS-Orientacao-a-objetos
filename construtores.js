@@ -117,3 +117,34 @@ peso2.favorites.push("quinoa")
 console.log(peso1.favorites)
 console.log(peso2.favorites)
 
+
+console.log("__________________")
+//Alterando os protótipos
+
+function Persor(name) {
+    this.name = name;
+}
+
+Persor.prototype = {
+    constructor: Persor,
+
+    sayName: function() {
+        console.log(this.name)
+    },
+    toString: function() {
+        return "[Person " + this.name + "]"
+    }
+}
+
+let pss1 = new Persor("Nicholas")
+let pss2 = new Persor("Miguel")
+
+console.log("sayHi" in pss1)
+console.log("sayHi" in pss2)
+
+Persor.prototype.sayHi = function() {
+    console.log("Oi")
+}
+
+pss1.sayHi()
+pss2.sayHi()
