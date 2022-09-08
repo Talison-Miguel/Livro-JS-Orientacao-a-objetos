@@ -148,3 +148,33 @@ Persor.prototype.sayHi = function() {
 
 pss1.sayHi()
 pss2.sayHi()
+
+
+console.log("__________________")
+//Protótipos de objetos prontos
+//Adicionar um novo metodo em tal funçao ja definida
+
+Array.prototype.sum = function() {
+    //passa por todo array somando o numero com o proximo
+    return this.reduce(function(antes, depois) {
+        return antes + depois
+    })
+}
+
+let numbers = [1, 2, 3, 4, 5, 6]
+let result  = numbers.sum()
+
+console.log(result)
+
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.substring(1)
+}
+
+let msg = "hello word"
+console.log(msg.capitalize())
+
+
+
+
+console.log("__________________")
