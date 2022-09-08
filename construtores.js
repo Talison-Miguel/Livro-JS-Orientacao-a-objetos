@@ -178,3 +178,6 @@ console.log(msg.capitalize())
 
 
 console.log("__________________")
+//Resumo
+//Os construtores sao apenas funçoes normais chamas pelo operador new
+//definir os prototipos de construtores qnd quiser tem varios obj com a mesma propiedade
