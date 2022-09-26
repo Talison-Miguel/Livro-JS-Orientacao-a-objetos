@@ -41,3 +41,21 @@ let bookk = {
 
 let message = "Book = " + bookk
 console.log(message)
+
+
+console.log("_________________")
+
+
+//Modificando Object.prototype
+Object.prototype.add = function(value) {
+    return this + value
+}
+
+let livro = {
+    title: "Livrao de Js"
+}
+
+console.log(livro.add(5))
+console.log("tittle".add("end"))
+// console.log(document.add(true))
+// console.log(window.add(5))
