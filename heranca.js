@@ -1,6 +1,10 @@
 //HERANÇA
 //herdam recursos de suas classes "parent"
 
+//Herança é um princípio de orientação a objetos,
+//que permite que classes compartilhem atributos e métodos, através de "heranças"
+
+
 console.log("_________________")
 
 //Cadeia de protítipo e Object.prototype
@@ -59,3 +63,50 @@ console.log(livro.add(5))
 console.log("tittle".add("end"))
 // console.log(document.add(true))
 // console.log(window.add(5))
+
+
+console.log("_________________")
+
+
+//Herança entre objetos
+
+//sao mesma coisa
+let boookk = {
+    title: "Princios dos objs Js"
+}
+
+let bookkk = Object.create(Object, prototype, {
+    title: {
+        configurable: true,
+        enumerable: true,
+        value: "Princios dos objs Js",
+        writable: true,
+    }
+})
+
+
+let person1 = {
+    name: "Talison",
+    sayName: function() {
+        console.log(this.name)
+    }
+}
+
+let person2 = Object.create(person1, {
+    name: {
+        configurable: true,
+        enumerable: true,
+        value: "Miguel",
+        writable: true,
+    }
+})
+
+person1.sayName()
+person2.sayName()
+console.log(person1.hasOwnProperty("sayName"))
+console.log(person1.isPrototypeOf(person2))
+console.log(person2.hasOwnProperty("sayName"))
+
+let nickName = Object.create(null)
+console.log("toString" in nickName)
+console.log("valueOf" in nickName)
