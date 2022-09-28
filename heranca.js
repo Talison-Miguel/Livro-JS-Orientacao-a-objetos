@@ -110,3 +110,37 @@ console.log(person2.hasOwnProperty("sayName"))
 let nickName = Object.create(null)
 console.log("toString" in nickName)
 console.log("valueOf" in nickName)
+
+
+console.log("_________________")
+
+
+//Herança de construtores
+
+function Rectangle(length, width) {
+    this.length = length
+    this.width = width
+}
+
+Rectangle.prototype.getArea = function() {
+    return "[Retangle " + this.length + "X" + this.width + "] --> " + this.length * this.width
+}
+
+function Square(size) {
+    this.length = size
+    this.width = size
+}
+
+Square.prototype = new Rectangle()
+Square.prototype.constructor = Square
+Square.prototype.toString = function() {
+    return "[Square " + this.length + "X" + this.width + "]"
+}
+
+let rec = new Rectangle(5, 10)
+let square = new Square(6)
+
+console.log(rec.getArea())
+console.log(square.getArea())
+console.log(rec.toString())
+console.log(square.toString())
