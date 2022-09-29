@@ -131,8 +131,15 @@ function Square(size) {
     this.width = size
 }
 
-Square.prototype = new Rectangle()
-Square.prototype.constructor = Square
+Square.prototype = Object.create(Rectangle.prototype, {
+    constructor: {
+        configurable: true,
+        enumerable: true,
+        value: true,
+        writable: true,
+    }
+})
+
 Square.prototype.toString = function() {
     return "[Square " + this.length + "X" + this.width + "]"
 }
@@ -144,3 +151,8 @@ console.log(rec.getArea())
 console.log(square.getArea())
 console.log(rec.toString())
 console.log(square.toString())
+
+
+console.log("_________________")
+
+
