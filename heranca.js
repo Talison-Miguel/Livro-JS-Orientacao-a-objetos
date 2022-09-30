@@ -156,3 +156,4 @@ console.log(square.toString())
 console.log("_________________")
 
 
+//Furto de construtor
