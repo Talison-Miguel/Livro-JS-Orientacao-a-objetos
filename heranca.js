@@ -144,16 +144,52 @@ Square.prototype.toString = function() {
     return "[Square " + this.length + "X" + this.width + "]"
 }
 
-let rec = new Rectangle(5, 10)
-let square = new Square(6)
+// let rec = new Rectangle(5, 10)
+// let square = new Square(6)
 
-console.log(rec.getArea())
-console.log(square.getArea())
-console.log(rec.toString())
-console.log(square.toString())
+// console.log(rec.getArea())
+// console.log(square.getArea())
+// console.log(rec.toString())
+// console.log(square.toString())
 
 
 console.log("_________________")
 
 
 //Furto de construtor
+
+function Rectangle2(length, width) {
+    this.length = length,
+    this.width = width
+}
+
+Rectangle2.prototype.getArea = function() {
+    return this.length * this.width
+}
+
+Rectangle2.prototype.toString = function() {
+    return "[Rectangle2 " + this.length + "X" + this.width +"]"
+}
+
+function Square(size) {
+    Rectangle2.call(this, size, size)
+}
+
+Square.prototype = Object.create(Rectangle.prototype, {
+    constructor: {
+        configurable: true,
+        enumerable: true,
+        value: Square,
+        writable: true
+    }
+})
+
+Square.prototype.toString = function() {
+    return "[Square " + this.length + "X" + this.width + "]"
+}
+
+let square = new Square(6)
+
+console.log(square.length)
+console.log(square.width)
+console.log(square.getArea)
