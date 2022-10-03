@@ -193,3 +193,13 @@ let square = new Square(6)
 console.log(square.length)
 console.log(square.width)
 console.log(square.getArea)
+
+
+console.log("_________________")
+
+
+//Acessando os metódos do supetipo
+Square.prototype.toString = function() {
+    let text = Rectangle2.prototype.toString.call(this)
+    return text.replace("Rectangle2", "Square")
+}
