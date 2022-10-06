@@ -40,7 +40,7 @@ console.log("____________________")
 function Person(name) {
 
     //define uma variavel acessivel somente no construtor Person
-    var age = 25
+    let age = 25
     this.name = name
 
     this.getAge1 = function() {
@@ -52,12 +52,12 @@ function Person(name) {
     }
 }
 
-var person1 = new Person("Miguel")
-console.log(person.name)
-console.log(person.getAge1())
+let person1 = new Person("Miguel")
+console.log(person1.name)
+console.log(person1.getAge1())
 
 person.age = 100
-console.log(person.getAge1())
+console.log(person1.getAge1())
 
-person.growOlder1()
-console.log(person.getAge1())
+person1.growOlder1()
+console.log(person1.getAge1())
