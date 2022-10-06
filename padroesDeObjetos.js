@@ -61,3 +61,20 @@ console.log(person1.getAge1())
 
 person1.growOlder1()
 console.log(person1.getAge1())
+
+
+console.log("____________________")
+
+
+//Mixins
+
+function mixin(receiver, supplier) {
+    for( let property in supplier) {
+        if(supplier.hasOwnProperty(property)) {
+            receiver[property] = supplier[property]
+        }
+    }
+
+    return receiver
+}
+
