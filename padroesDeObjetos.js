@@ -78,3 +78,22 @@ function mixin(receiver, supplier) {
     return receiver
 }
 
+
+//Ex
+function EventTarget() {
+
+}
+
+EventTarget.prototype = {
+    constructor: EventTarget,
+    addListener: function(type, listener) {
+        //cria um array se ela nao existir
+        if( !this.hasOwnProperty("_listeners")) {
+            this._listener = [];
+        }
+        if(typeof this._listener[type] == "undefined") {
+            this._listener[type] = []
+        }
+        this._listener[type].push(listener)
+    }
+}
