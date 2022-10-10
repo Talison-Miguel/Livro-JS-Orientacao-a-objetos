@@ -95,5 +95,30 @@ EventTarget.prototype = {
             this._listener[type] = []
         }
         this._listener[type].push(listener)
+    },
+    fire: function(event) {
+        if(!event.target) {
+            event.target = this
+        }
+        if(!event.type) {
+            throw new Error("Event object missing 'type' property")
+        }
+        if(this._listener && this._listener[event.type] instanceof Array) {
+            let listeners = this._listener[event.type]
+            for(let i = 0, len = _listener.length; i < len; i++) {
+                listeners[i].call(this, event)
+            }
+        }
+    },
+    removeListener: function(type, listener) {
+        if(this._listener && this._listener[type] instanceof Array) {
+            let listeners = this._listener[type]
+            for(let i = 0, len = listeners.length; i < len; i++) {
+                if(listeners[i] === listener) {
+                    listeners.splice(i, 1)
+                    break
+                }
+            }
+        }
     }
 }
