@@ -105,7 +105,7 @@ EventTarget.prototype = {
         }
         if(this._listener && this._listener[event.type] instanceof Array) {
             let listeners = this._listener[event.type]
-            for(let i = 0, len = _listener.length; i < len; i++) {
+            for(let i = 0, len = listeners.length; i < len; i++) {
                 listeners[i].call(this, event)
             }
         }
@@ -121,4 +121,20 @@ EventTarget.prototype = {
             }
         }
     }
+}
+
+let target = new EventTarget()
+target.addListener('message', function(event) {
+    console.log("Message is " + event.data)
+})
+target.fire({
+    type: "message",
+    data: "Hello world"
+})
+
+let person4 = new EventTarget()
+person4.name = "Talison"
+person4.sayName = function() {
+    console.log(this.name)
+    this.fire({type: "namesaid", name: this.name})
 }
