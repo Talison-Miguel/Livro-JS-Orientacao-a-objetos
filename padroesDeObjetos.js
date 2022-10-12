@@ -138,3 +138,14 @@ person4.sayName = function() {
     console.log(this.name)
     this.fire({type: "namesaid", name: this.name})
 }
+
+function Person2(name) {
+    this.name = name
+}
+
+Person2.prototype = Object.create(EventTarget.prototype)
+Person2.prototype = Person2
+
+Person2.prototype.sayName = function() {
+    console.log
+}
