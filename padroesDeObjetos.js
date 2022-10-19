@@ -149,3 +149,5 @@ Person2.prototype = Person2
 Person2.prototype.sayName = function() {
     console.log
 }
+
+//
