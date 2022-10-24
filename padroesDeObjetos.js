@@ -150,4 +150,12 @@ Person2.prototype.sayName = function() {
     console.log
 }
 
-//
+
+//continuaçao
+let persso = mixin(new EventTarget(), {
+    name: "Nicholas",
+    sayName: function() {
+        console.log(this.name)
+        this.fire({type: "namesaid", name: this.name})
+    }
+})
