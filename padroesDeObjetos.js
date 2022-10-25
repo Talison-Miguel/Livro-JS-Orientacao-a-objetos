@@ -159,3 +159,55 @@ let persso = mixin(new EventTarget(), {
         this.fire({type: "namesaid", name: this.name})
     }
 })
+
+
+//Continuaçao 2
+let psso = mixin(new EventTarget(), {
+    get name() {
+        return "Nicolas"
+    },
+    sayName: function() {
+        console.log(this.name)
+        this.fire({ type: "namesaid", name: name})
+    }
+})
+
+console.log(psso.name)
+psso.name = "Talison"
+console.log(psso.name)
+
+
+
+console.log("____________________")
+
+
+//Construtores com escopo seguro
+//Sempre usar o new
+
+function Pessoa(name) {
+    this.name
+}
+
+Pessoa.prototype.sairNome = function() {
+    console.log(this.name)
+}
+
+let pessoa1 = Pessoa("Talison Miguel")
+
+console.log(person1 instanceof Pessoa)
+console.log(typeof pessoa1)
+// console.log(nome)
+
+function Pessoa2(name) {
+    if( this instanceof Person2) {
+        this.name = this.name
+    } else {
+        return new Person2(name)
+    }
+}
+
+let pssoa1 = new Pessoa2("Miguel")
+let pssoa2 = Person2('Amancio')
+
+console.log(pssoa1 instanceof Pessoa2)
+console.log(pssoa2 instanceof Pessoa2)
