@@ -1,4 +1,3 @@
-Princípios De Orientação a Objetos em JavaScript
 <h1 align="center">
  📙 Livro-JS-Orientacao-a-objetos
 </h1>
