@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img alt="HTML" src="https://img.shields.io/badge/JS-100%25-orange">
+  <img alt="HTML" src="https://img.shields.io/badge/JavaScript-100%25-orange">
  
   <br>
   
